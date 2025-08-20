@@ -19,22 +19,27 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"git-caleb.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.23.2","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js" defer></script>
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="YuYang&#39;s Blog">
-<meta property="og:url" content="https://git-caleb.github.io/index.html">
+    <meta name="description" content="Question:Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.You may assume that each input would have exactly one solution, and yo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="1.TwoSum">
+<meta property="og:url" content="https://git-caleb.github.io/2025/08/20/1TwoSum/index.html">
 <meta property="og:site_name" content="YuYang&#39;s Blog">
+<meta property="og:description" content="Question:Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.You may assume that each input would have exactly one solution, and yo">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-08-20T15:33:20.000Z">
+<meta property="article:modified_time" content="2025-08-20T08:25:20.852Z">
 <meta property="article:author" content="YuYang">
+<meta property="article:tag" content="leetcode">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://git-caleb.github.io/">
+<link rel="canonical" href="https://git-caleb.github.io/2025/08/20/1TwoSum/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"en","comments":"","permalink":"","path":"index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://git-caleb.github.io/2025/08/20/1TwoSum/","path":"2025/08/20/1TwoSum/","title":"1.TwoSum"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>YuYang's Blog</title>
+<title>1.TwoSum | YuYang's Blog</title>
   
 
 
@@ -84,7 +89,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">YuYang's Blog</h1>
+      <p class="site-title">YuYang's Blog</p>
       <i class="logo-line"></i>
     </a>
   </div>
@@ -164,16 +169,17 @@
 
     </div>
 
-    <div class="main-inner index posts-expand">
+    <div class="main-inner post posts-expand">
 
-    
+
+  
 
 
 <div class="post-block">
   
   
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
     <link itemprop="mainEntityOfPage" href="https://git-caleb.github.io/2025/08/20/1TwoSum/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -187,13 +193,13 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | YuYang's Blog">
+      <meta itemprop="name" content="1.TwoSum | YuYang's Blog">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/08/20/1TwoSum/" class="post-title-link" itemprop="url">1.TwoSum</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          1.TwoSum
+        </h1>
 
         <div class="post-meta-container">
           <div class="post-meta">
@@ -216,13 +222,11 @@
     
     
     
-    <div class="post-body" itemprop="articleBody">
-          <p>Question:Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.You may assume that each input would have exactly one solution, and you may not use the same element twice.You can return the answer in any order.</p>
+    <div class="post-body" itemprop="articleBody"><p>Question:Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.You may assume that each input would have exactly one solution, and you may not use the same element twice.You can return the answer in any order.</p>
 <p>At first, the most intuitive approach that comes to mind is using two nested for loops. However, this method has a time complexity of O(n²), so I needed a more efficient solution.</p>
 <p>When I noticed that this problem is tagged with “hash”, the idea of trading space for time immediately occurred to me. A hash table is a data structure that stores key-value pairs, allowing for O(1) average-time complexity for lookups—perfect for optimizing this problem.</p>
 <p>Here is the complete solution code:<br>class Solution:<br>    def twoSum(self, nums: List[int], target: int) -&gt; List[int]:<br>        hash_dict &#x3D; {}<br>        for i in range(len(nums)):<br>            complement &#x3D; target - nums[i]<br>            if complement in hash_dict:<br>                return [hash_dict[complement], i]<br>            hash_dict[nums[i]] &#x3D; i<br>        return []        </p>
 
-      
     </div>
 
     
@@ -230,85 +234,21 @@
     
 
     <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
+          <div class="post-tags">
+              <a href="/tags/leetcode/" rel="tag"># leetcode</a>
+          </div>
 
+        
 
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://git-caleb.github.io/2025/08/09/%E7%AB%8B%E7%A7%8B/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/cat.png">
-      <meta itemprop="name" content="YuYang">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="YuYang's Blog">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | YuYang's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/08/09/%E7%AB%8B%E7%A7%8B/" class="post-title-link" itemprop="url">立秋</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2025-08-09 18:24:24" itemprop="dateCreated datePublished" datetime="2025-08-09T18:24:24+00:00">2025-08-09</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2025-08-20 08:25:20" itemprop="dateModified" datetime="2025-08-20T08:25:20+00:00">2025-08-20</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>说来就来的秋天<br>又迟迟然未然<br>依然暑热盘桓</p>
-<p>可蝉声渐栖在耳畔<br>梧桐飘落零星的寒暄<br>晨风拂过时<br>一片叶在肩上<br>悄然<br>停泊成薄薄的秋</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2025/08/09/%E7%AB%8B%E7%A7%8B/" rel="prev" title="立秋">
+                  <i class="fa fa-angle-left"></i> 立秋
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
     </footer>
   </article>
 </div>
@@ -317,6 +257,8 @@
 
 
 
+
+    <div class="comments gitalk-container"></div>
 </div>
   </main>
 
@@ -354,7 +296,7 @@
 </noscript>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"Git-caleb","repo":"MyBlog-Comments","client_id":"Ov23liVTEAV70kOblhoa","client_secret":"1098324333bc7048730dd9f3e84c9ee400acf1bf","admin_user":null,"distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"d1546d731a9f30cc80127d57142a482b"}</script>
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"Git-caleb","repo":"MyBlog-Comments","client_id":"Ov23liVTEAV70kOblhoa","client_secret":"1098324333bc7048730dd9f3e84c9ee400acf1bf","admin_user":null,"distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"91be6fda150d3a0b416b4605c176b71e"}</script>
 <script src="/js/third-party/comments/gitalk.js" defer></script>
 
 </body>
