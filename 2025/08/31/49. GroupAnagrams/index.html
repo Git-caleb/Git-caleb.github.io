@@ -19,15 +19,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"git-caleb.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.23.2","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js" defer></script>
 
-    <meta name="description" content="1. Group AnagramsDescriptionGiven an array of strings strs, group the anagrams together. You can return the answer in any order.Example 1: 123456Input: strs &#x3D; [&quot;eat&quot;,&quot;tea&quot;,&quot;ta">
+    <meta name="description" content="49. Group AnagramsDescriptionGiven an array of strings strs, group the anagrams together. You can return the answer in any order.Example 1: 123456Input: strs &#x3D; [&quot;eat&quot;,&quot;tea&quot;,&quot;t">
 <meta property="og:type" content="article">
-<meta property="og:title" content="1.TwoSum">
+<meta property="og:title" content="49. GroupAnagrams">
 <meta property="og:url" content="https://git-caleb.github.io/2025/08/31/49.%20GroupAnagrams/index.html">
 <meta property="og:site_name" content="YuYang&#39;s Blog">
-<meta property="og:description" content="1. Group AnagramsDescriptionGiven an array of strings strs, group the anagrams together. You can return the answer in any order.Example 1: 123456Input: strs &#x3D; [&quot;eat&quot;,&quot;tea&quot;,&quot;ta">
+<meta property="og:description" content="49. Group AnagramsDescriptionGiven an array of strings strs, group the anagrams together. You can return the answer in any order.Example 1: 123456Input: strs &#x3D; [&quot;eat&quot;,&quot;tea&quot;,&quot;t">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-08-31T12:31:53.000Z">
-<meta property="article:modified_time" content="2025-08-31T12:53:52.746Z">
+<meta property="article:modified_time" content="2025-08-31T12:56:36.093Z">
 <meta property="article:author" content="YuYang">
 <meta property="article:tag" content="leetcode">
 <meta name="twitter:card" content="summary">
@@ -36,10 +36,10 @@
 <link rel="canonical" href="https://git-caleb.github.io/2025/08/31/49.%20GroupAnagrams/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://git-caleb.github.io/2025/08/31/49.%20GroupAnagrams/","path":"2025/08/31/49. GroupAnagrams/","title":"1.TwoSum"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://git-caleb.github.io/2025/08/31/49.%20GroupAnagrams/","path":"2025/08/31/49. GroupAnagrams/","title":"49. GroupAnagrams"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>1.TwoSum | YuYang's Blog</title>
+<title>49. GroupAnagrams | YuYang's Blog</title>
   
 
 
@@ -128,7 +128,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-Group-Anagrams"><span class="nav-number">1.</span> <span class="nav-text">1. Group Anagrams</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Description"><span class="nav-number">1.1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Approach"><span class="nav-number">1.2.</span> <span class="nav-text">Approach</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution"><span class="nav-number">1.3.</span> <span class="nav-text">Solution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Complexity-Analysis"><span class="nav-number">1.4.</span> <span class="nav-text">Complexity Analysis</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#49-Group-Anagrams"><span class="nav-number">1.</span> <span class="nav-text">49. Group Anagrams</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Description"><span class="nav-number">1.1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Approach"><span class="nav-number">1.2.</span> <span class="nav-text">Approach</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution"><span class="nav-number">1.3.</span> <span class="nav-text">Solution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Complexity-Analysis"><span class="nav-number">1.4.</span> <span class="nav-text">Complexity Analysis</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -194,12 +194,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="1.TwoSum | YuYang's Blog">
+      <meta itemprop="name" content="49. GroupAnagrams | YuYang's Blog">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          1.TwoSum
+          49. GroupAnagrams
         </h1>
 
         <div class="post-meta-container">
@@ -222,7 +222,7 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="1-Group-Anagrams"><a href="#1-Group-Anagrams" class="headerlink" title="1. Group Anagrams"></a>1. Group Anagrams</h1><h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given an array of strings <code>strs</code>, group the anagrams together. You can return the answer in any order.<br><strong>Example 1:</strong></p>
+    <div class="post-body" itemprop="articleBody"><h1 id="49-Group-Anagrams"><a href="#49-Group-Anagrams" class="headerlink" title="49. Group Anagrams"></a>49. Group Anagrams</h1><h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given an array of strings <code>strs</code>, group the anagrams together. You can return the answer in any order.<br><strong>Example 1:</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Input: strs = [&quot;eat&quot;,&quot;tea&quot;,&quot;tan&quot;,&quot;ate&quot;,&quot;nat&quot;,&quot;bat&quot;]</span><br><span class="line">Output: [[&quot;bat&quot;],[&quot;nat&quot;,&quot;tan&quot;],[&quot;ate&quot;,&quot;eat&quot;,&quot;tea&quot;]]</span><br><span class="line">Explanation:</span><br><span class="line">There is no string in strs that can be rearranged to form &quot;bat&quot;.</span><br><span class="line">The strings &quot;nat&quot; and &quot;tan&quot; are anagrams as they can be rearranged to form each other.</span><br><span class="line">The strings &quot;ate&quot;, &quot;eat&quot;, and &quot;tea&quot; are anagrams as they can be rearranged to form each other.</span><br></pre></td></tr></table></figure>
 <p><strong>Example 2:</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: strs = [&quot;&quot;]</span><br><span class="line">Output: [[&quot;&quot;]]</span><br></pre></td></tr></table></figure>
@@ -241,8 +241,10 @@
 </ul>
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">groupAnagrams</span>(<span class="params">self, strs: <span class="type">List</span>[<span class="built_in">str</span>]</span>) -&gt; <span class="type">List</span>[<span class="type">List</span>[<span class="built_in">str</span>]]:</span><br><span class="line">        anagram_groups = &#123;&#125;</span><br><span class="line">        <span class="keyword">for</span> s <span class="keyword">in</span> strs:</span><br><span class="line">            sorted_str = <span class="string">&#x27;&#x27;</span>.join(<span class="built_in">sorted</span>(s))</span><br><span class="line">            <span class="keyword">if</span> sorted_str <span class="keyword">in</span> anagram_groups:</span><br><span class="line">                anagram_groups[sorted_str].append(s)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                anagram_groups[sorted_str] = [s]</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">list</span>(anagram_groups.values())</span><br></pre></td></tr></table></figure>
 <h2 id="Complexity-Analysis"><a href="#Complexity-Analysis" class="headerlink" title="Complexity Analysis"></a>Complexity Analysis</h2><ul>
-<li><strong>Time Complexity</strong>:O(n*klogk) - n is the number of strings and k is the maximum length of the strings.</li>
-<li><strong>Space Complexity</strong>:O(n*k) - Used to store the hash map. In the worst case, we need to store all n strings, each of length up to k.</li>
+<li><p><strong>Time Complexity</strong>:O(n*klogk) - n is the number of strings and k is the maximum length of the strings.</p>
+</li>
+<li><p><strong>Space Complexity</strong>:O(n*k) - Used to store the hash map. In the worst case, we need to store all n strings, each of length up to k.</p>
+</li>
 </ul>
 
     </div>
