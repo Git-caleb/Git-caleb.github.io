@@ -216,10 +216,25 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>Question:Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.You may assume that each input would have exactly one solution, and you may not use the same element twice.You can return the answer in any order.</p>
-<p>At first, the most intuitive approach that comes to mind is using two nested for loops. However, this method has a time complexity of O(n²), so I needed a more efficient solution.</p>
-<p>When I noticed that this problem is tagged with “hash”, the idea of trading space for time immediately occurred to me. A hash table is a data structure that stores key-value pairs, allowing for O(1) average-time complexity for lookups—perfect for optimizing this problem.</p>
-<p>Here is the complete solution code:<br>class Solution:<br>    def twoSum(self, nums: List[int], target: int) -&gt; List[int]:<br>        hash_dict &#x3D; {}<br>        for i in range(len(nums)):<br>            complement &#x3D; target - nums[i]<br>            if complement in hash_dict:<br>                return [hash_dict[complement], i]<br>            hash_dict[nums[i]] &#x3D; i<br>        return []        </p>
+          <h1 id="1-Two-Sum"><a href="#1-Two-Sum" class="headerlink" title="1. Two Sum"></a>1. Two Sum</h1><h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given an array of integers <code>nums</code> and an integer <code>target</code>, return indices of the two numbers such that they add up to <code>target</code>.<br>You may assume that each input would have exactly one solution, and you may not use the same element twice.<br>You can return the answer in any order.<br><strong>Example 1:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: nums = [2,7,11,15], target = 9</span><br><span class="line">Output: [0,1]</span><br><span class="line">Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].</span><br></pre></td></tr></table></figure>
+<p><strong>Example 2:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: nums = [3,2,4], target = 6</span><br><span class="line">Output: [1,2]</span><br></pre></td></tr></table></figure>
+<p><strong>Example 3:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: nums = [3,3], target = 6</span><br><span class="line">Output: [0,1]</span><br></pre></td></tr></table></figure>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li>2 &lt;&#x3D; nums.length &lt;&#x3D; 10^4</li>
+<li>-10^9 &lt;&#x3D; nums[i] &lt;&#x3D; 10^9</li>
+<li>-10^9 &lt;&#x3D; target &lt;&#x3D; 10^9</li>
+<li>Only one valid answer exists.</li>
+</ul>
+<h2 id="Approach"><a href="#Approach" class="headerlink" title="Approach"></a>Approach</h2><p>At first, the most intuitive approach that comes to mind is using two nested for loops. However, this method has a time complexity of O(n²), so I needed a more efficient solution.<br>When I noticed that this problem is tagged with “hash”, the idea of trading space for time immediately occurred to me. A hash table is a data structure that stores key-value pairs, allowing for O(1) average-time complexity for lookups—perfect for optimizing this problem.</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">twoSum</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>], target: <span class="built_in">int</span></span>) -&gt; <span class="type">List</span>[<span class="built_in">int</span>]:</span><br><span class="line">        hash_dict = &#123;&#125;</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(nums)):</span><br><span class="line">            complement = target - nums[i]</span><br><span class="line">            <span class="keyword">if</span> complement <span class="keyword">in</span> hash_dict:</span><br><span class="line">                <span class="keyword">return</span> [hash_dict[complement], i]</span><br><span class="line">            hash_dict[nums[i]] = i</span><br><span class="line">        <span class="keyword">return</span> []</span><br></pre></td></tr></table></figure>
+<h2 id="Complexity-Analysis"><a href="#Complexity-Analysis" class="headerlink" title="Complexity Analysis"></a>Complexity Analysis</h2><ul>
+<li><strong>Time Complexity</strong>: O(n) - We traverse the list containing n elements only once</li>
+<li><strong>Space Complexity</strong>: O(n) - The worst case requires storing n elements in the hash table<br>This approach significantly improves efficiency by leveraging hash table lookups, trading space for time—a classic optimization strategy.</li>
+</ul>
 
       
     </div>
